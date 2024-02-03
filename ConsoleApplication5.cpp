@@ -69,6 +69,7 @@ int main()
 	int ho;  // час
 	int menu;
 	bool ClosetProgram = false;
+	int YN;
 	do {
 		cout << "1 Добавить дело.\n";
 		cout << "2 Просмотреть список дел.\n";
@@ -660,7 +661,7 @@ int main()
 				cout << "вы уверены что хотите удалить это дело?\n";
 				fOutput(m, day, mon, hoyr);
 				cout << "1 да \\ 2 нет\n";
-				int YN;
+				YN = 1;
 				fDell(m, mon, day, hoyr,YN);
 		case 6:
 			ClosetProgram = true;
@@ -878,8 +879,8 @@ void fRedact(monht m[])
 	cout << "4 Дату.";
 	cout << "5 закончить.\n";
 	cin >> a;
-	
 	cin.ignore(32767, '\n');
+	int YN;
 	do{
 		system("cls");
 		switch (a)
@@ -921,7 +922,7 @@ void fRedact(monht m[])
 			m[m1].x[d1].h[h1].proritet = m[mon].x[day].h[hoyr].proritet;
 			m[m1].x[d1].h[h1].opisanie = m[mon].x[day].h[hoyr].opisanie;
 			m[m1].x[d1].h[h1].name = m[mon].x[day].h[hoyr].name;
-			int YN = 1;
+			YN = 1;
 			fDell(m, mon, day, hoyr, YN);
 			break;
 		case 5:
